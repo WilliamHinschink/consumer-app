@@ -1,0 +1,19 @@
+apply plugin: 'base'
+apply plugin: 'maven'
+
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+subprojects {
+    apply from: rootProject.file('common.gradle')
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}

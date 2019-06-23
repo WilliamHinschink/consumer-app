@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="ConsumerPU" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.sibentek.consumer.ejb.entity.Cidade</class>
+        <class>com.sibentek.consumer.ejb.entity.Consumer</class>
+        <class>com.sibentek.consumer.ejb.entity.ConsumerPK</class>
+        <class>com.sibentek.consumer.ejb.entity.Grupo</class>
+        <class>com.sibentek.consumer.ejb.entity.Profissao</class>
+        <class>com.sibentek.consumer.ejb.entity.Uf</class>
+        <class>com.sibentek.consumer.ejb.entity.Usuario</class>
+
+        <properties>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />
+
+            <property name="javax.persistence.jdbc.password" value="01010111"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/consumers"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!--  atualiza o banco, gera as tabelas se for preciso -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+            <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/consumers"/>-->
+            <!--<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>

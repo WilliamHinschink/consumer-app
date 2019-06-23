@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':consumer-app-ejb')
+}
+
+jar {
+    archiveName = baseName + '.' + extension
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'consumer-app'
+include 'consumer-app-ws', 'consumer-app-ejb', 'consumer-app-web', 'consumer-app-ear'
+

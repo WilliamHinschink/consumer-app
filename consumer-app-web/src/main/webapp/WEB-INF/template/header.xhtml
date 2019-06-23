@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="barraDeFerramentas">
+        <p:toolbar>
+            <p:toolbarGroup align="left">
+                <p:menuButton value="Menu 1">
+                    <p:menuitem value="Item de Menu 1" action="pagina1" ajax="false"/>
+                    <p:menuitem value="Item de Menu 2" action="pagina2" ajax="false"/>
+                </p:menuButton>
+                <p:commandButton value="Menu 2" action="pagina3" ajax="false"/>
+            </p:toolbarGroup>
+        </p:toolbar>
+    </h:form>
+</ui:composition>

@@ -1,0 +1,16 @@
+apply plugin: 'war'
+
+repositories {
+    maven {
+        url 'http://repository.primefaces.org/'
+    }
+}
+
+dependencies {
+    compile 'org.primefaces:primefaces:7.0'
+    compile group: 'org.primefaces.themes', name: 'all-themes', version: '1.0.10'
+}
+
+war {
+    archiveName = baseName + '.' + extension
+}
