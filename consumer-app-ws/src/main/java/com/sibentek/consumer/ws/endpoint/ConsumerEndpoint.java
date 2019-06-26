@@ -3,6 +3,7 @@ package com.sibentek.consumer.ws.endpoint;
 import com.sibentek.consumer.ws.model.request.ConsumerRequest;
 import com.sibentek.consumer.ws.model.response.GetCustomersResponseMessage;
 
+import com.sibentek.consumer.ws.validator.JaxbValidator.ValidationException;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -10,7 +11,7 @@ import javax.jws.WebService;
 import javax.xml.ws.ResponseWrapper;
 
 @WebService(targetNamespace = "http://sibentek.com/samples/jax-ws/customers/v1")
-public interface CustomerEndpoint {
+public interface ConsumerEndpoint {
 
     @WebMethod(operationName = "GetCustomers", action = "http://sibentek.com/samples/jax-ws/customers/v1/GetCustomers")
     @WebResult(name = "output")
@@ -21,7 +22,8 @@ public interface CustomerEndpoint {
     )
     GetCustomersResponseMessage getCustomers();
 
-    @WebMethod(operationName = "CreateConsumer", action = "http://sibentek.com/samples/jax-ws/customers/v1/CreateConsumer")
-    GetCustomersResponseMessage createConsumer(
-            @WebParam(name = "consumerRequest", targetNamespace = "http://sibentek.com/samples/jax-ws/customers/v1") ConsumerRequest request);
+    @WebMethod(operationName = "PostConsumer", action = "http://sibentek.com/samples/jax-ws/customers/v1/CreateConsumer")
+    GetCustomersResponseMessage postConsumer(
+            @WebParam(name = "consumerRequest", targetNamespace = "http://sibentek.com/samples/jax-ws/customers/v1") ConsumerRequest request)
+        throws ValidationException;
 }
